@@ -21,6 +21,7 @@ export default defineComponent({
   setup() {
     const SchemaRef: Ref<any> = ref(schema)
 
+    // 输入改变时执行的函数
     const handleCodeChange = (code: string) => {
       let schema: any
       try {

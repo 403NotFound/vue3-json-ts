@@ -43,13 +43,13 @@ export default defineComponent({
     // must be shallowRef, if not, editor.getValue() won't work
     const editorRef = shallowRef()
 
-    const containerRef = ref()
+    const containerRef = ref(1)
 
     let _subscription: Monaco.IDisposable | undefined
     let __prevent_trigger_change_event = false
 
     onMounted(() => {
-      const editor = editorRef.value = Monaco.editor.create(containerRef.value, {
+      const editor = editorRef.value = Monaco.editor.create(containerRef.value as any, {
         value: props.code,
         language: 'json',
         formatOnPaste: true,
